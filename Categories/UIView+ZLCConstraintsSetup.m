@@ -56,6 +56,18 @@
     return widthConstraint;
 }
 
+-(NSLayoutConstraint *) ZLC_constraintForEqualWidthsWithView:(UIView *) view
+{
+    NSLayoutConstraint *equalWidthsConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                             attribute:NSLayoutAttributeWidth
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:view
+                                                                             attribute:NSLayoutAttributeWidth
+                                                                            multiplier:1
+                                                                              constant:0];
+    return equalWidthsConstraint;
+}
+
 -(NSLayoutConstraint *) ZLC_constraintAligningLeftEdgeWithRightEdgeOfView:(UIView *) view
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self

@@ -15,6 +15,8 @@
 -(void) ZLC_bindSubviewHorizontally:(UIView *) subview;
 
 -(NSLayoutConstraint *) ZLC_bindWidth:(CGFloat) width;
+-(NSLayoutConstraint *) ZLC_constraintForEqualWidthsWithView:(UIView *) view;
+
 -(NSLayoutConstraint *) ZLC_constraintAligningLeftEdgeWithRightEdgeOfView:(UIView *) view;
 -(NSLayoutConstraint *) ZLC_constraintAlingningLeftEdgesWithView:(UIView *) view;
 
