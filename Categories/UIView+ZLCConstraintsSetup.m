@@ -80,7 +80,7 @@
     return constraint;
 }
 
--(NSLayoutConstraint *) ZLC_constraintAlingningLeftEdgesWithView:(UIView *) view
+-(NSLayoutConstraint *) ZLC_constraintAligningLeftEdgesWithView:(UIView *) view
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:NSLayoutAttributeLeft
@@ -90,6 +90,25 @@
                                                                  multiplier:1
                                                                    constant:0];
     return constraint;
+}
+
+-(void) ZLC_centerSubview:(UIView *) subview
+{
+    NSLayoutConstraint *horizontalCenterAlignment = [NSLayoutConstraint constraintWithItem:subview
+                                                                                 attribute:NSLayoutAttributeCenterX
+                                                                                 relatedBy:NSLayoutRelationEqual
+                                                                                    toItem:self
+                                                                                 attribute:NSLayoutAttributeCenterX
+                                                                                multiplier:1
+                                                                                  constant:0];
+    NSLayoutConstraint *verticalCenterAlignment = [NSLayoutConstraint constraintWithItem:subview
+                                                                               attribute:NSLayoutAttributeCenterY
+                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                  toItem:self
+                                                                               attribute:NSLayoutAttributeCenterY
+                                                                              multiplier:1
+                                                                                constant:0];
+    [self addConstraints:@[horizontalCenterAlignment, verticalCenterAlignment]];
 }
 
 @end
