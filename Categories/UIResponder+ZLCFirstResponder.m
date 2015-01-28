@@ -13,7 +13,7 @@ static __weak id ZLC_currentFirstResponder;
 
 @implementation UIResponder (ZLCFirstResponder)
 
-+(id) ZLC_currentFirstResponder
++(id) zlc_currentFirstResponder
 {
     ZLC_currentFirstResponder = nil;
     [[UIApplication sharedApplication] sendAction:@selector(ZLC_findFirstResponder:)

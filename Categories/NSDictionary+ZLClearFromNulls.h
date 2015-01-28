@@ -9,6 +9,6 @@
 
 @interface NSDictionary (ZLClearFromNulls)
 
--(NSDictionary *) ZL_clearFromNulls;
+-(NSDictionary *) zlc_clearFromNulls;
 
 @end

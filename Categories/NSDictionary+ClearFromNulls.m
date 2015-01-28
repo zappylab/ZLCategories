@@ -11,7 +11,7 @@
 
 @implementation NSDictionary (ZLClearFromNulls)
 
--(NSDictionary *) ZL_clearFromNulls
+-(NSDictionary *) zlc_clearFromNulls
 {
     NSMutableDictionary *mutableDictionary = [self mutableCopy];
     for (id key in mutableDictionary.allKeys) {

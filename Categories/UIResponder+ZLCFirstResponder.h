@@ -11,7 +11,7 @@
 
 @interface UIResponder (ZLCFirstResponder)
 
-+(id) ZLC_currentFirstResponder;
++(id) zlc_currentFirstResponder;
 
 @end
 
