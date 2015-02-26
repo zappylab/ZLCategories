@@ -11,23 +11,23 @@
 
 @implementation UIView (ZLCConstraintsSetup)
 
--(void) ZLC_bindSubviewVertically:(UIView *) subview
+-(void) zlc_bindSubviewVertically:(UIView *) subview
 {
-    [self ZLC_bindSubview:subview
-                  byAxis:@"V"];
+    [self zlc_bindSubview:subview
+                   byAxis:@"V"];
 }
 
--(void) ZLC_bindSubviewHorizontally:(UIView *) subview
+-(void) zlc_bindSubviewHorizontally:(UIView *) subview
 {
-    [self ZLC_bindSubview:subview
-                  byAxis:@"H"];
+    [self zlc_bindSubview:subview
+                   byAxis:@"H"];
 }
 
 //
 // axis : H or V
 //
--(void) ZLC_bindSubview:(UIView *) subview
-                byAxis:(NSString *) axis
+-(void) zlc_bindSubview:(UIView *) subview
+                 byAxis:(NSString *) axis
 {
     NSAssert([self.subviews containsObject:subview], @"should be a subview to be bounded");
 
@@ -43,7 +43,7 @@
     [self addConstraints:verticalConstraints];
 }
 
--(NSLayoutConstraint *) ZLC_bindWidth:(CGFloat) width
+-(NSLayoutConstraint *) zlc_bindWidth:(CGFloat) width
 {
     NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self
                                                                        attribute:NSLayoutAttributeWidth
@@ -56,7 +56,20 @@
     return widthConstraint;
 }
 
--(NSLayoutConstraint *) ZLC_constraintForEqualWidthsWithView:(UIView *) view
+-(NSLayoutConstraint *) zlc_bindHeight:(CGFloat) height
+{
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                        attribute:NSLayoutAttributeHeight
+                                                                        relatedBy:NSLayoutRelationEqual
+                                                                           toItem:nil
+                                                                        attribute:NSLayoutAttributeNotAnAttribute
+                                                                       multiplier:1
+                                                                         constant:height];
+    [self addConstraint:heightConstraint];
+    return heightConstraint;
+}
+
+-(NSLayoutConstraint *) zlc_constraintForEqualWidthsWithView:(UIView *) view
 {
     NSLayoutConstraint *equalWidthsConstraint = [NSLayoutConstraint constraintWithItem:self
                                                                              attribute:NSLayoutAttributeWidth
@@ -68,7 +81,7 @@
     return equalWidthsConstraint;
 }
 
--(NSLayoutConstraint *) ZLC_constraintAligningLeftEdgeWithRightEdgeOfView:(UIView *) view
+-(NSLayoutConstraint *) zlc_constraintAligningLeftEdgeWithRightEdgeOfView:(UIView *) view
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:NSLayoutAttributeLeft
@@ -80,7 +93,7 @@
     return constraint;
 }
 
--(NSLayoutConstraint *) ZLC_constraintAligningLeftEdgesWithView:(UIView *) view
+-(NSLayoutConstraint *) zlc_constraintAligningLeftEdgesWithView:(UIView *) view
 {
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
                                                                   attribute:NSLayoutAttributeLeft
@@ -92,7 +105,7 @@
     return constraint;
 }
 
--(void) ZLC_centerSubview:(UIView *) subview
+-(void) zlc_centerSubview:(UIView *) subview
 {
     NSLayoutConstraint *horizontalCenterAlignment = [NSLayoutConstraint constraintWithItem:subview
                                                                                  attribute:NSLayoutAttributeCenterX

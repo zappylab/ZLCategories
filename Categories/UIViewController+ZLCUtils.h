@@ -13,7 +13,8 @@
 
 -(void) zlc_showChildViewController:(UIViewController *) childController
                         inContainer:(UIView *) container;
--(void) zlc_removeChildViewController;
+
+-(void) zlc_removeChildViewController:(UIViewController *) childController;
 
 @end
 

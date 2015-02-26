@@ -20,13 +20,13 @@
     [self addChildViewController:childController];
     [childController didMoveToParentViewController:self];
     childController.view.translatesAutoresizingMaskIntoConstraints = NO;
-    [container ZLC_bindSubviewHorizontally:childController.view];
-    [container ZLC_bindSubviewVertically:childController.view];
+    [container zlc_bindSubviewHorizontally:childController.view];
+    [container zlc_bindSubviewVertically:childController.view];
 }
 
--(void) zlc_removeChildViewController
+-(void) zlc_removeChildViewController:(UIViewController *) childController
 {
-    UIViewController *childViewController = [self.childViewControllers firstObject];
+    UIViewController *childViewController = childController;
     [childViewController.view removeFromSuperview];
     [childViewController removeFromParentViewController];
 }

@@ -11,16 +11,17 @@
 
 @interface UIView (ZLCConstraintsSetup)
 
--(void) ZLC_bindSubviewVertically:(UIView *) subview;
--(void) ZLC_bindSubviewHorizontally:(UIView *) subview;
+-(void) zlc_bindSubviewVertically:(UIView *) subview;
+-(void) zlc_bindSubviewHorizontally:(UIView *) subview;
 
--(void) ZLC_centerSubview:(UIView *) subview;
+-(void) zlc_centerSubview:(UIView *) subview;
 
--(NSLayoutConstraint *) ZLC_bindWidth:(CGFloat) width;
--(NSLayoutConstraint *) ZLC_constraintForEqualWidthsWithView:(UIView *) view;
+-(NSLayoutConstraint *) zlc_bindWidth:(CGFloat) width;
+-(NSLayoutConstraint *) zlc_bindHeight:(CGFloat) height;
+-(NSLayoutConstraint *) zlc_constraintForEqualWidthsWithView:(UIView *) view;
 
--(NSLayoutConstraint *) ZLC_constraintAligningLeftEdgeWithRightEdgeOfView:(UIView *) view;
--(NSLayoutConstraint *) ZLC_constraintAligningLeftEdgesWithView:(UIView *) view;
+-(NSLayoutConstraint *) zlc_constraintAligningLeftEdgeWithRightEdgeOfView:(UIView *) view;
+-(NSLayoutConstraint *) zlc_constraintAligningLeftEdgesWithView:(UIView *) view;
 
 @end
 
