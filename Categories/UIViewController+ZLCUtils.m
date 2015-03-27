@@ -27,6 +27,7 @@
 -(void) zlc_removeChildViewController:(UIViewController *) childController
 {
     UIViewController *childViewController = childController;
+    [childController willMoveToParentViewController:nil];
     [childViewController.view removeFromSuperview];
     [childViewController removeFromParentViewController];
 }
