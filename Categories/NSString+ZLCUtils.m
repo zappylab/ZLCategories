@@ -2,8 +2,6 @@
 // Created by Ilya Dyakonov on 11/09/14.
 // Copyright (c) 2014 ZappyLab. All rights reserved.
 //
-//
-
 
 #import "NSString+ZLCUtils.h"
 
@@ -75,6 +73,19 @@
                                                                 range:NSMakeRange(0, self.length)
                                                          withTemplate:@" "];
 
+}
+
+-(NSString *) zlc_stringByRemovingJsonSpecialCharacters
+{
+    NSError *error = nil;
+    NSRegularExpression *jsonSrecialCharactersExpression = [NSRegularExpression regularExpressionWithPattern:@"\b|\f|\n|\r|\t|\""
+                                                                                                     options:NSRegularExpressionCaseInsensitive
+                                                                                                       error:&error];
+    
+    return [jsonSrecialCharactersExpression stringByReplacingMatchesInString:self
+                                                                     options:kNilOptions
+                                                                       range:NSMakeRange(0, self.length)
+                                                                withTemplate:@""];
 }
 
 @end
