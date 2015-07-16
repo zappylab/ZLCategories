@@ -59,7 +59,7 @@
                                                                               options:kNilOptions
                                                                                 range:NSMakeRange(0, self.length)
                                                                          withTemplate:@""];
-    return [stringWithoutTags zlc_stringByRemovingEncodedCharacters];
+    return stringWithoutTags;
 }
 
 -(NSString *) zlc_stringByRemovingEncodedCharacters
