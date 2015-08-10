@@ -55,11 +55,21 @@
     NSRegularExpression *htmlTagExpression = [NSRegularExpression regularExpressionWithPattern:@"<[^>]+>"
                                                                                        options:NSRegularExpressionCaseInsensitive
                                                                                          error:&error];
-    NSString *stringWithoutTags = [htmlTagExpression stringByReplacingMatchesInString:self
-                                                                              options:kNilOptions
-                                                                                range:NSMakeRange(0, self.length)
-                                                                         withTemplate:@""];
+    NSString *preparedString = [self zlc_stringByDecodedAngleBrackets];
+    NSString *stringWithoutTags =
+    [htmlTagExpression stringByReplacingMatchesInString:preparedString
+                                                options:kNilOptions
+                                                  range:NSMakeRange(0, preparedString.length)
+                                           withTemplate:@""];
     return stringWithoutTags;
+}
+
+-(NSString *) zlc_stringByDecodedAngleBrackets
+{
+    NSString *stringWithoutLeftAngleBracket = [self stringByReplacingOccurrencesOfString:@"&lt;"
+                                                                              withString:@"<"];
+    return [stringWithoutLeftAngleBracket stringByReplacingOccurrencesOfString:@"&gt;"
+                                                                    withString:@">"];
 }
 
 -(NSString *) zlc_stringByRemovingEncodedCharacters
@@ -72,7 +82,6 @@
                                                               options:kNilOptions
                                                                 range:NSMakeRange(0, self.length)
                                                          withTemplate:@" "];
-
 }
 
 -(NSString *) zlc_stringByRemovingJsonSpecialCharacters
