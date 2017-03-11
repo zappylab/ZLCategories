@@ -23,6 +23,28 @@
                    byAxis:@"H"];
 }
 
+-(void) zlc_bindSubviewVertically:(UIView *) superView
+                  upperEdgeIndent:(NSInteger) upperEdgeIndent
+                 bottomEdgeIndent:(NSInteger) bottomEdgeIndent
+{
+    NSLayoutConstraint *bottomPositionConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                                relatedBy:NSLayoutRelationEqual
+                                                                                   toItem:superView
+                                                                                attribute:NSLayoutAttributeBottom
+                                                                               multiplier:1
+                                                                                 constant:bottomEdgeIndent];
+    [superView addConstraint:bottomPositionConstraint];
+    NSLayoutConstraint *topPositionConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                                             attribute:NSLayoutAttributeTop
+                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                toItem:superView
+                                                                             attribute:NSLayoutAttributeTop
+                                                                            multiplier:1
+                                                                              constant:upperEdgeIndent];
+    [superView addConstraint:topPositionConstraint];
+}
+
 //
 // axis : H or V
 //
