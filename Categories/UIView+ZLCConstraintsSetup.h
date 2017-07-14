@@ -5,8 +5,6 @@
 
 #import <Foundation/Foundation.h>
 
-/////////////////////////////////////////////////////
-
 @interface UIView (ZLCConstraintsSetup)
 
 -(void) zlc_bindSubviewVertically:(UIView *) subview;
@@ -24,7 +22,6 @@
 
 -(NSLayoutConstraint *) zlc_constraintAligningLeftEdgeWithRightEdgeOfView:(UIView *) view;
 -(NSLayoutConstraint *) zlc_constraintAligningLeftEdgesWithView:(UIView *) view;
+-(NSLayoutConstraint *) zlc_constraintAligningRightEdgesWithView:(UIView *) view;
 
 @end
-
-/////////////////////////////////////////////////////

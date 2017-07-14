@@ -127,6 +127,18 @@
     return constraint;
 }
 
+-(NSLayoutConstraint *) zlc_constraintAligningRightEdgesWithView:(UIView *) view
+{
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self
+                                                                  attribute:NSLayoutAttributeRight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:view
+                                                                  attribute:NSLayoutAttributeRight
+                                                                 multiplier:1
+                                                                   constant:0];
+    return constraint;
+}
+
 -(void) zlc_centerSubview:(UIView *) subview
 {
     NSLayoutConstraint *horizontalCenterAlignment = [NSLayoutConstraint constraintWithItem:subview
