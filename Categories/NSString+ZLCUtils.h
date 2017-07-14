@@ -13,6 +13,7 @@
 -(NSString *) zlc_stringByRemovingChainedNewlines;
 -(NSString *) zlc_stringByRemovingHTMLTags;
 -(NSString *) zlc_stringByRemovingEncodedCharacters;
+-(NSString *) zlc_stringByRemovingHtmlTables;
 
 -(NSString *) zlc_stringByRemovingJsonSpecialCharacters;
 

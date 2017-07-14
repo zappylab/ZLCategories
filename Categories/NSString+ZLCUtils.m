@@ -97,6 +97,18 @@
                                                                 withTemplate:@""];
 }
 
+-(NSString *) zlc_stringByRemovingHtmlTables
+{
+    NSError *error = nil;
+    NSRegularExpression *encodedSymbolsExpression = [NSRegularExpression regularExpressionWithPattern:@"<table[^>]*>(?:.|\n)*?<\/table>"
+                                                                                              options:NSRegularExpressionCaseInsensitive
+                                                                                                error:&error];
+    return [encodedSymbolsExpression stringByReplacingMatchesInString:self
+                                                              options:kNilOptions
+                                                                range:NSMakeRange(0, self.length)
+                                                         withTemplate:@""];
+}
+
 @end
 
 /////////////////////////////////////////////////////
