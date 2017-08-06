@@ -14,6 +14,7 @@
 -(NSString *) zlc_stringByRemovingHTMLTags;
 -(NSString *) zlc_stringByRemovingEncodedCharacters;
 -(NSString *) zlc_stringByRemovingHtmlTables;
+-(NSString *) zlc_stringByRemovingParagraphs;
 
 -(NSString *) zlc_stringByRemovingJsonSpecialCharacters;
 

@@ -109,6 +109,19 @@
                                                          withTemplate:@""];
 }
 
+-(NSString *) zlc_stringByRemovingParagraphs
+{
+    NSError *error = nil;
+    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"\n|<p>|</p>"
+                                                                                options:NSRegularExpressionCaseInsensitive
+                                                                                  error:&error];
+    
+    return [expression stringByReplacingMatchesInString:self
+                                                options:kNilOptions
+                                                  range:NSMakeRange(0, self.length)
+                                           withTemplate:@""];
+}
+
 @end
 
 /////////////////////////////////////////////////////
